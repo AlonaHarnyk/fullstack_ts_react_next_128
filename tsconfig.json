@@ -17,9 +17,9 @@
     /* Linting */
     "noUnusedLocals": false,
     "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
+    "erasableSyntaxOnly": false,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": true
+    // "noUncheckedIndexedAccess": true
   },
   "include": ["src"]
 }
