@@ -1,0 +1,19 @@
+.name {
+    color: red;
+}
+
+.age {
+    color: green;
+}
+
+.info {
+    color: brown;
+}
+
+.available {
+    background-color: palegreen;
+}
+
+.taken {
+    background-color: palevioletred;
+}
