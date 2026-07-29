@@ -12,7 +12,7 @@ export default function App() {
   const [clicks, setClicks] = useState<number>(0);
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
-  // const [number, setNumber] = useState(calc())
+  // const [number, setNumber] = useState(() => calc())
 
   // const handleClick = (event: React.MouseEvent<HTMLButtonElement> ) => {
   //   console.log(event);
