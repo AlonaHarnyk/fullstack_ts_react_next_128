@@ -1,8 +1,20 @@
 import css from "./SearchForm.module.css";
 
-export default function SearchForm({ onSearch }) {
+interface SearchFormProps {
+  onSearch: (topic: string) => void;
+}
+
+export default function SearchForm({ onSearch }: SearchFormProps) {
+  const handleSubmit = (formData: FormData) => {
+    const topic = formData.get("topic") as string;
+    const trimmedTopic = topic.trim()
+    if (trimmedTopic.length > 0) {
+      onSearch(trimmedTopic);
+    }
+  };
+
   return (
-    <form className={css.form}>
+    <form className={css.form} action={handleSubmit}>
       <input className={css.input} type="text" name="topic" />
       <button type="submit">Search</button>
     </form>

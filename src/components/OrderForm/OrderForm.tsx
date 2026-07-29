@@ -1,19 +1,73 @@
 import css from "./OrderForm.module.css";
+import { useId } from "react";
+
+// console.log((form.elements.namedItem('username') as HTMLInputElement).value)
+
+// interface OrderFormElement extends HTMLFormElement {
+//   elements: HTMLFormControlsCollection & {
+//     username: HTMLInputElement;
+//     email: HTMLInputElement;
+//   };
+// }
+
+interface Order {
+  username: string;
+  email: string;
+  delivery: string;
+}
 
 export default function OrderForm() {
+  const id = useId();
+
+  // const handleSubmit = (event: React.SubmitEvent<HTMLFormElement>) => {
+  //   event.preventDefault();
+  //   const form = event.currentTarget;
+  //   const formData = new FormData(form);
+  //   const username = formData.get("username") as string;
+  //   const email = formData.get("email") as string;
+  //   const delivery = formData.get("delivery") as string;
+
+  //   console.log({ username, email, delivery })
+  //   form.reset()
+  // };
+
+  const handleSubmit = (formData: FormData) => {
+    // const username = formData.get("username") as string;
+    // const email = formData.get("email") as string;
+    // const delivery = formData.get("delivery") as string;
+    // console.log({ username, email, delivery })
+    const values = Object.fromEntries(formData);
+    console.log(values as unknown as Order);
+  };
+
   return (
-    <form className={css.form}>
+    // <form className={css.form} onSubmit={handleSubmit}>
+    <form className={css.form} action={handleSubmit}>
       <fieldset className={css.fieldset}>
         <legend className={css.legend}>Client info:</legend>
-        <label className={css.label}>Name</label>
-        <input className={css.input} type="text" name="username" />
+        <label className={css.label} htmlFor={`${id}-username`}>
+          Name
+        </label>
+        <input
+          className={css.input}
+          type="text"
+          name="username"
+          id={`${id}-username`}
+        />
 
-        <label className={css.label}>Email</label>
-        <input className={css.input} type="email" name="email" />
+        <label className={css.label} htmlFor={`${id}-email`}>
+          Email
+        </label>
+        <input
+          className={css.input}
+          type="email"
+          name="email"
+          id={`${id}-email`}
+        />
       </fieldset>
 
       <fieldset className={css.fieldset}>
-        <legend className={css.legend}>Delivery method:</legend>
+        ß<legend className={css.legend}>Delivery method:</legend>
         <label className={css.option}>
           <input type="radio" name="delivery" value="pickup" defaultChecked />
           Pickup

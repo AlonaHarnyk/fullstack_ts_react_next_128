@@ -1,6 +1,11 @@
+import type { Article } from "../../types";
 import css from "./ArticleList.module.css";
 
-export default function ArticleList({ items }) {
+interface ArticleListProps {
+  items: Article[];
+}
+
+export default function ArticleList({ items }: ArticleListProps) {
   return (
     <ul className={css.list}>
       {items.map((item) => (
