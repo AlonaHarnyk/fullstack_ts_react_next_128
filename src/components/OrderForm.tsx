@@ -53,6 +53,8 @@ export default function OrderForm() {
       initialValues={initialValues}
       onSubmit={handleSubmit}
       validationSchema={orderSchema}
+      validateOnBlur={false}
+      validateOnChange={false}
     >
       {({ errors, isSubmitting, isValid, dirty }) => {
         console.log(errors);
