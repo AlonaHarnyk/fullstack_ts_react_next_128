@@ -10,7 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.101.4",
+    "@tanstack/react-query-devtools": "^5.101.4",
+    "axios": "^1.19.0",
     "formik": "^2.4.9",
+    "modern-normalize": "^3.0.1",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-paginate": "^8.3.0",
