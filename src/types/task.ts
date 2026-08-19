@@ -5,3 +5,5 @@ export interface Task {
 }
 
 export type TaskId = Task["id"];
+
+export type SortOrder = "asc" | "desc";
