@@ -1,0 +1,5 @@
+import MoviesNav from "@/components/MoviesNav/MoviesNav";
+
+export default function Drama() {
+  return <p>MOVIES</p>;
+}
