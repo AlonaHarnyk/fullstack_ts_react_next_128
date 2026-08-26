@@ -1,6 +1,9 @@
+import { fetchCategories } from "@/lib/products-api";
 import Link from "next/link";
 
-export default function Header() {
+export default async function Header() {
+  const categories = await fetchCategories();
+  
   return (
     <header>
       <nav>
@@ -9,10 +12,7 @@ export default function Header() {
             <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="/posts">Posts</Link>
-          </li>
-          <li>
-            <Link href="/tasks">Tasks</Link>
+            <Link href={`/products/${categories[0].slug}`}>Products</Link>
           </li>
         </ul>
       </nav>
