@@ -2,6 +2,8 @@ import { fetchCategories } from "@/lib/products-api";
 import Link from "next/link";
 
 export default async function Sidebar() {
+  // await new Promise((r) => setTimeout(r, 6000));
+
   const categories = await fetchCategories();
   
   return (

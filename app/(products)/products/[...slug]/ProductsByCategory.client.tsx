@@ -2,6 +2,7 @@
 
 import { fetchProductsByCategory } from "@/lib/products-api";
 import { useQuery } from "@tanstack/react-query";
+import Link from "next/link";
 import { useParams } from "next/navigation";
 
 export default function ProductsByCategoryClient() {
@@ -18,8 +19,8 @@ export default function ProductsByCategoryClient() {
     <>
       {data && data.length > 0 && (
         <ul>
-          {data.map((product) => (
-            <li key={product.id}>{product.title}</li>
+          {data.map(({ title, id })  => (
+            <li key={id}><Link href={`/product-details/${id}`}>{title}</Link></li>
           ))}
         </ul>
       )}
