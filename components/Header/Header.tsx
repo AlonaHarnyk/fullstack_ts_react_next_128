@@ -14,9 +14,6 @@ export default async function Header() {
           <li>
             <Link href={`/products/${categories[0].slug}`}>Products</Link>
           </li>
-          <li>
-            <Link href="/test">Test</Link>
-          </li>
         </ul>
       </nav>
     </header>
