@@ -17,3 +17,12 @@ export type User = {
   createdAt: Date;
   updatedAt: Date;
 };
+
+export type LoginRequest = {
+  email: string;
+  password: string;
+};
+
+export type CheckSessionRequest = {
+  success: boolean;
+};

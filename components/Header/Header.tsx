@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import AuthNavigation from "../AuthNavigation/AuthNavigation";
 
 export default function Header() {
   return (
@@ -10,14 +11,12 @@ export default function Header() {
             <Link href="/">Home</Link>
           </li>
           <li>
+            <Link href="/profile">Profile</Link>
+          </li>
+          <li>
             <Link href="/tasks">Tasks</Link>
           </li>
-          <li>
-            <Link href="/login">Login</Link>
-          </li>
-          <li>
-            <Link href="/register">Register</Link>
-          </li>
+          <AuthNavigation />
         </ul>
       </nav>
     </header>

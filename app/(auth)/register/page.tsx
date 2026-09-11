@@ -1,6 +1,7 @@
 "use client";
 
 import { register } from "@/lib/clientApi";
+import { useAuthStore } from "@/lib/store/authStore";
 import { RegisterRequest } from "@/types";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -8,6 +9,7 @@ import { useState } from "react";
 const Register = () => {
   const router = useRouter();
   const [isError, setIsError] = useState(false);
+  const setUser = useAuthStore((state) => state.setUser)
 
   const handleSubmit = async (formData: FormData) => {
     try {
@@ -17,7 +19,8 @@ const Register = () => {
       const res = await register(formValues);
       // Виконуємо редірект або відображаємо помилку
       if (res) {
-        router.push("/");
+        setUser(res)
+        router.push('/profile');
       } else {
         setIsError(true);
       }
